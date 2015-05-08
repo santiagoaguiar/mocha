@@ -206,8 +206,10 @@ mocha.ui(program.ui);
 
 // load reporter
 
-program.reporter.forEach(function (reporter) {
+program.reporter.forEach(function (reporterConfig) {
+  var reporter;
   try {
+    reporter = reporterConfig.split(':')[0];
     Reporter = require('../lib/reporters/' + reporter);
   } catch (err) {
     try {

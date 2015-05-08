@@ -13,8 +13,8 @@ describe('multiple reporters', function(){
     });
     suite = new Suite('Multiple reporters suite', 'root');
     runner = new Runner(suite);
-    specReporter = new mocha._reporters[0](runner);
-    jsonReporter = new mocha._reporters[1](runner);
+    specReporter = new mocha._reporters[0][0](runner);
+    jsonReporter = new mocha._reporters[1][0](runner);
   })
 
   it('should have 1 test failure', function(done){
